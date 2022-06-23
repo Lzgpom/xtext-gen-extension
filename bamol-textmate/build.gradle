@@ -1,0 +1,9 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+dependencies {
+    implementation 'org.eclipse.xtext:org.eclipse.xtext.generator:2.26.0'
+    implementation 'org.apache.velocity:velocity:1.7'
+    implementation 'com.google.code.gson:gson:2.9.0'
+}

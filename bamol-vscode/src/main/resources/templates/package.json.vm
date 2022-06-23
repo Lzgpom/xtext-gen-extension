@@ -1,0 +1,43 @@
+{
+  "name": "$id",
+  "displayName": "$name",
+  "description": "$name Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.66.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:$id"
+  ],
+  "main": "src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "$id",
+        "aliases": [$id],
+        "extensions": [
+          #foreach($extension in $extensions)
+            $extension
+            #if ($foreach.count != $extensions.size())
+              ,
+            #end
+          #end
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "$id",
+        "scopeName": "source.$id",
+        "path": "./syntaxes/${id}.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "vscode-languageclient": "^7.0.0"
+  }
+}

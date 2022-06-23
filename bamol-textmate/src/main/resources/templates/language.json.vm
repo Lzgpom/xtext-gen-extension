@@ -1,0 +1,109 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "$grammar.name",
+    "fileTypes": [
+        #foreach($extension in $grammar.fileExtensions)
+            $extension
+            #if ($foreach.count != $grammar.fileExtensions.size())
+                ,
+            #end
+        #end
+    ],
+	"scopeName": "source.$grammar.name",
+	"patterns": [
+        #if ($grammar.comment.line or ($grammar.comment.blockStart and $grammar.comment.blockEnd))
+        {
+            "include": "#comment"
+        },
+        #end
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#number"
+        },
+        {
+            "include": "#language_keyword"
+        },
+        {
+            "include": "#language_operation"
+        },
+        {
+            "include": "#regular_expression"
+        }
+    ],
+    "repository": {
+        #if ($grammar.comment.line or ($grammar.comment.blockStart and $grammar.comment.blockEnd))
+        "comment": {
+            "patterns": [
+                #if ($grammar.comment.line)
+                {
+                    "match": "$grammar.comment.line.*$",
+                    "name": "comment.line"
+                },
+                #end
+                #if ($grammar.comment.blockStart and $grammar.comment.blockEnd)
+                {
+                    "name": "comment.block",
+                    "begin": "$grammar.comment.blockStart",
+                    "end": "$grammar.comment.blockEnd"
+                }
+                #end
+            ]
+        },
+        #end
+        "string": {
+            "patterns": [
+                {
+                    "name": "string.quoted.single",
+                    "begin": "'",
+                    "end": "'"
+                },
+                {
+                    "name": "string.quoted.double",
+                    "begin": "\"",
+                    "end": "\""
+                }
+            ]
+        },
+        "number": {
+            "patterns": [
+                {
+                    "match": "\\b[0-9]+\\b\\.{0,1}",
+                    "name": "constant.numeric"
+                }
+            ]
+        },
+        "language_keyword": {
+            "patterns": [
+                #foreach( $keyword in $grammar.keywords )
+                    {
+                        "match": "$keyword.match",
+                        "name": "$keyword.type.value"
+                    }
+                    #if ($foreach.count != $grammar.keywords.size())
+                        ,
+                    #end
+                #end
+            ]
+        },
+        "language_operation": {
+            "patterns": [
+                #foreach( $operation in $grammar.operations )
+                    {
+                        "match": "$operation.match",
+                        "name": "$operation.type"
+                    }
+                    #if ($foreach.count != $grammar.operations.size())
+                        ,
+                    #end
+                #end
+            ]
+        },
+        "regular_expression": {
+            "patterns": [
+
+            ]
+        }
+    }
+}

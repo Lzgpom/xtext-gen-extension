@@ -1,0 +1,8 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+dependencies {
+    implementation 'org.eclipse.xtext:org.eclipse.xtext.xtext.wizard:2.26.0'
+    implementation 'org.eclipse.emf:org.eclipse.emf.codegen.ecore:2.29.0'
+}

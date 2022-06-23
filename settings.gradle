@@ -1,0 +1,8 @@
+rootProject.name = 'xtext-gen-extension'
+
+include 'bamol-ecore'
+include 'bamol-xtext'
+include 'bamol-controller'
+include 'bamol-textmate'
+include 'bamol-vscode'
+

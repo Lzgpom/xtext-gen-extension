@@ -1,0 +1,16 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+    id 'application'
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+}
+
+dependencies {
+    implementation 'org.eclipse.xtext:org.eclipse.xtext.xtext.wizard:2.26.0'
+    implementation 'info.picocli:picocli:4.6.3'
+    implementation project(":bamol-ecore")
+    implementation project(":bamol-xtext")
+    implementation project(":bamol-textmate")
+    implementation project(":bamol-vscode")
+}
+
+mainClassName = "org.bamol.dsl.gen.controller.Main"
