@@ -1,0 +1,41 @@
+{
+  "name": "statemachine",
+  "displayName": "Statemachine",
+  "description": "Statemachine Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.66.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:statemachine"
+  ],
+  "main": "src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "statemachine",
+        "aliases": [
+          "statemachine"
+        ],
+        "extensions": [
+          "sm",
+          "statemachine"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "statemachine",
+        "scopeName": "source.statemachine",
+        "path": "./syntaxes/statemachine.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "vscode-languageclient": "^7.0.0"
+  }
+}

@@ -1,0 +1,2 @@
+include 'statemachine'
+include 'statemachine.ide'

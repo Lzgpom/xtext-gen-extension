@@ -1,0 +1,2 @@
+include 'domainmodel'
+include 'domainmodel.ide'

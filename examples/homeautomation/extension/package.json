@@ -1,0 +1,40 @@
+{
+  "name": "ruleengine",
+  "displayName": "RuleEngine",
+  "description": "RuleEngine Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.66.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:ruleengine"
+  ],
+  "main": "src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ruleengine",
+        "aliases": [
+          "ruleengine"
+        ],
+        "extensions": [
+          "rules"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ruleengine",
+        "scopeName": "source.ruleengine",
+        "path": "./syntaxes/ruleengine.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "vscode-languageclient": "^7.0.0"
+  }
+}

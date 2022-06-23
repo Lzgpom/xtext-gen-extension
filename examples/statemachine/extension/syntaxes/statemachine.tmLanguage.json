@@ -1,0 +1,112 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "statemachine",
+  "fileTypes": [
+    "sm",
+    "statemachine"
+  ],
+  "scopeName": "source.statemachine",
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#language_keyword"
+    },
+    {
+      "include": "#language_operation"
+    },
+    {
+      "include": "#regular_expression"
+    }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "match": "//.*$",
+          "name": "comment.line"
+        },
+        {
+          "name": "comment.block",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "name": "string.quoted.single",
+          "begin": "\u0027",
+          "end": "\u0027"
+        },
+        {
+          "name": "string.quoted.double",
+          "begin": "\"",
+          "end": "\""
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "match": "\\b[0-9]+\\b\\.{0,1}",
+          "name": "constant.numeric"
+        }
+      ]
+    },
+    "language_keyword": {
+      "patterns": [
+        {
+          "match": "\\bresetEvents\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bcommands\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bactions\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bevents\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bstate\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bend\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\u003d\\\u003e",
+          "name": "constant.language"
+        },
+        {
+          "match": "\\{",
+          "name": "constant.language"
+        },
+        {
+          "match": "\\}",
+          "name": "constant.language"
+        }
+      ]
+    },
+    "language_operation": {
+      "patterns": []
+    },
+    "regular_expression": {
+      "patterns": []
+    }
+  }
+}

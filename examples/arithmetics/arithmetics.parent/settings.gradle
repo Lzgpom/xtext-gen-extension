@@ -1,0 +1,2 @@
+include 'arithmetics'
+include 'arithmetics.ide'

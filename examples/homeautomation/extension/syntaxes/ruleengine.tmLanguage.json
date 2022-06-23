@@ -1,0 +1,103 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ruleengine",
+  "fileTypes": [
+    "rules"
+  ],
+  "scopeName": "source.ruleengine",
+  "patterns": [
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#language_keyword"
+    },
+    {
+      "include": "#language_operation"
+    },
+    {
+      "include": "#regular_expression"
+    }
+  ],
+  "repository": {
+    "string": {
+      "patterns": [
+        {
+          "name": "string.quoted.single",
+          "begin": "\u0027",
+          "end": "\u0027"
+        },
+        {
+          "name": "string.quoted.double",
+          "begin": "\"",
+          "end": "\""
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "match": "\\b[0-9]+\\b\\.{0,1}",
+          "name": "constant.numeric"
+        }
+      ]
+    },
+    "language_keyword": {
+      "patterns": [
+        {
+          "match": "\\bdefault\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDevice\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bswitch\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bRule\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bthen\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bwhen\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bcan\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bbe\\b",
+          "name": "support.class"
+        },
+        {
+          "match": ",",
+          "name": "constant.language"
+        },
+        {
+          "match": ":",
+          "name": "constant.language"
+        },
+        {
+          "match": ";",
+          "name": "constant.language"
+        }
+      ]
+    },
+    "language_operation": {
+      "patterns": []
+    },
+    "regular_expression": {
+      "patterns": []
+    }
+  }
+}

@@ -1,0 +1,992 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "metamodel",
+  "fileTypes": [
+    "bm",
+    "bamol"
+  ],
+  "scopeName": "source.metamodel",
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#language_keyword"
+    },
+    {
+      "include": "#language_operation"
+    },
+    {
+      "include": "#regular_expression"
+    }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "match": "//.*$",
+          "name": "comment.line"
+        },
+        {
+          "name": "comment.block",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "name": "string.quoted.single",
+          "begin": "\u0027",
+          "end": "\u0027"
+        },
+        {
+          "name": "string.quoted.double",
+          "begin": "\"",
+          "end": "\""
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "match": "\\b[0-9]+\\b\\.{0,1}",
+          "name": "constant.numeric"
+        }
+      ]
+    },
+    "language_keyword": {
+      "patterns": [
+        {
+          "match": "\\bBeforeCollectionEntityInitialize\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAuthorizationPolicyPermission\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAuthorizationRoleSubject\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bStateEnabledAttribute\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bStateEnabledOperation\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bapplicationBehaviours\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bauthorizationPolicies\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bbehaviourDependencies\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bApplicationBehaviour\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bQueryOrderedProperty\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAuthorizationPolicy\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bBehaviourDependency\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bbehaviourNamespaces\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bexecutesInConnector\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bBehaviourNamespace\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bQueryJoinPredicate\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bassignToExpression\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bauthorizationRoles\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdependsOnAttribute\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bfullyQualifiedName\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAuthorizationRole\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bReferenceSelector\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bcustomElementName\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdataAccessRuntime\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdisableAttributes\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdisableOperations\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\benabledAttributes\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bexecutionLocation\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\borderedProperties\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bElementAttribute\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bElementBehaviour\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bEnumerationValue\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bapplicationMenus\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bbehaviourRuntime\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\benableOperations\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bentityBehaviours\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bApplicationMenu\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bEntityBehaviour\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bStateTransition\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\baggregationKind\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bgenericEntities\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bisSensitiveData\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bouterDefinition\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bGroupContainer\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bStateBehaviour\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdataBehaviours\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDataBehaviour\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bGenericEntity\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMMultiplicity\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bQueryProperty\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bSelectorEntry\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bStateDecision\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bstateMachines\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\btextTemplates\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bwebComponents\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bBeforeChange\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bInnerElement\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bLanguageText\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMEnumeration\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bStateMachine\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bTextTemplate\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bWebComponent\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bassemblyName\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bcommitements\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\benumerations\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bmultiplicity\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAfterChange\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bButtonGroup\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bCommitement\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bEnumeration\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bQueryFilter\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bcommentType\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdatasources\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdescription\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bpermissions\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\btransitions\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bvisibleFrom\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bBeforeSave\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDataSource\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bExpression\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bInitialize\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bListColumn\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMAttribute\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bQueryTable\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bWidescreen\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\battributes\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bbehaviours\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdashboards\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdataSource\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdatasource\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdefinition\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bexpression\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bisReadOnly\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bproperties\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAfterSave\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bCOMPOSITE\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bContainer\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDashboard\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMenuEntry\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bPredicate\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bQueryJoin\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\battribute\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdecisions\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdirection\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdocuments\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\binnerPath\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bisInitial\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\blanguages\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bouterPath\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bresources\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bselectors\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bCalendar\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDecision\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDocument\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bExternal\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bInternal\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bLanguage\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMBoolean\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMDecimal\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMInteger\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bOptional\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bReadList\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bRequired\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bResource\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bSelector\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdecision\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\belements\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bfunction\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bhelpText\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bisSystem\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bjoinType\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bpolicies\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bsubjects\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\busername\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAverage\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDescend\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDesktop\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDivider\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bFormula\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bOnClick\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bculture\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bisHiden\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bqueries\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bversion\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAction\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAscend\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bButton\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bChange\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bCreate\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDelete\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMobile\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bSHARED\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bSelect\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bTablet\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bUpdate\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bagents\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bcolumn\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bentity\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bevents\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bfilter\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bisRoot\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bseries\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bstates\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bthemes\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bvalues\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAgent\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bCount\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bCross\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bEvent\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bGroup\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bInner\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bInput\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bLabel\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMDate\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMText\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMUuid\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMonth\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bNuget\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bPanel\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bQuery\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bRight\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bSerie\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bState\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bTheme\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\balias\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bfalse\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bforms\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bjoins\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\blabel\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\blists\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\blower\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\border\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bquery\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\broles\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\btable\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\btexts\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bupper\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bvalue\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAuto\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bFile\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bForm\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bFull\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bLeft\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bList\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMenu\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bNONE\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bNone\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bRead\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bYear\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bpath\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bsize\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\btrue\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\btype\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bAdd\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bApp\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bDay\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMax\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bMin\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bOut\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bSum\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bkey\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\brow\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bId\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bIn\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bto\\b",
+          "name": "support.class"
+        },
+        {
+          "match": ",",
+          "name": "constant.language"
+        },
+        {
+          "match": "\\-",
+          "name": "constant.language"
+        },
+        {
+          "match": "\\{",
+          "name": "constant.language"
+        },
+        {
+          "match": "\\}",
+          "name": "constant.language"
+        }
+      ]
+    },
+    "language_operation": {
+      "patterns": []
+    },
+    "regular_expression": {
+      "patterns": []
+    }
+  }
+}

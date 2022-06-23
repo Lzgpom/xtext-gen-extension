@@ -1,0 +1,91 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "domainmodel",
+  "fileTypes": [
+    "dmodel"
+  ],
+  "scopeName": "source.domainmodel",
+  "patterns": [
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#language_keyword"
+    },
+    {
+      "include": "#language_operation"
+    },
+    {
+      "include": "#regular_expression"
+    }
+  ],
+  "repository": {
+    "string": {
+      "patterns": [
+        {
+          "name": "string.quoted.single",
+          "begin": "\u0027",
+          "end": "\u0027"
+        },
+        {
+          "name": "string.quoted.double",
+          "begin": "\"",
+          "end": "\""
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "match": "\\b[0-9]+\\b\\.{0,1}",
+          "name": "constant.numeric"
+        }
+      ]
+    },
+    "language_keyword": {
+      "patterns": [
+        {
+          "match": "\\bextends\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bpackage\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bentity\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bop\\b",
+          "name": "support.class"
+        },
+        {
+          "match": ",",
+          "name": "constant.language"
+        },
+        {
+          "match": ":",
+          "name": "constant.language"
+        },
+        {
+          "match": "\\{",
+          "name": "constant.language"
+        },
+        {
+          "match": "\\}",
+          "name": "constant.language"
+        }
+      ]
+    },
+    "language_operation": {
+      "patterns": []
+    },
+    "regular_expression": {
+      "patterns": []
+    }
+  }
+}

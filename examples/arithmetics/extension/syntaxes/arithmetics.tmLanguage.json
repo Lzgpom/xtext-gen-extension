@@ -1,0 +1,115 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "arithmetics",
+  "fileTypes": [
+    "calc"
+  ],
+  "scopeName": "source.arithmetics",
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#language_keyword"
+    },
+    {
+      "include": "#language_operation"
+    },
+    {
+      "include": "#regular_expression"
+    }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "match": "//.*$",
+          "name": "comment.line"
+        },
+        {
+          "name": "comment.block",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "name": "string.quoted.single",
+          "begin": "\u0027",
+          "end": "\u0027"
+        },
+        {
+          "name": "string.quoted.double",
+          "begin": "\"",
+          "end": "\""
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "match": "\\b[0-9]+\\b\\.{0,1}",
+          "name": "constant.numeric"
+        }
+      ]
+    },
+    "language_keyword": {
+      "patterns": [
+        {
+          "match": "\\bimport\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bmodule\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\bdef\\b",
+          "name": "support.class"
+        },
+        {
+          "match": "\\*",
+          "name": "constant.language"
+        },
+        {
+          "match": "\\+",
+          "name": "constant.language"
+        },
+        {
+          "match": ",",
+          "name": "constant.language"
+        },
+        {
+          "match": "\\-",
+          "name": "constant.language"
+        },
+        {
+          "match": "/",
+          "name": "constant.language"
+        },
+        {
+          "match": ":",
+          "name": "constant.language"
+        },
+        {
+          "match": ";",
+          "name": "constant.language"
+        }
+      ]
+    },
+    "language_operation": {
+      "patterns": []
+    },
+    "regular_expression": {
+      "patterns": []
+    }
+  }
+}

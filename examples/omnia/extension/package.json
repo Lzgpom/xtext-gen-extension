@@ -1,0 +1,41 @@
+{
+  "name": "metamodel",
+  "displayName": "Metamodel",
+  "description": "Metamodel Language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.66.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:metamodel"
+  ],
+  "main": "src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "metamodel",
+        "aliases": [
+          "metamodel"
+        ],
+        "extensions": [
+          "bm",
+          "bamol"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "metamodel",
+        "scopeName": "source.metamodel",
+        "path": "./syntaxes/metamodel.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "vscode-languageclient": "^7.0.0"
+  }
+}
